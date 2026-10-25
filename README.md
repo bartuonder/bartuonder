@@ -240,7 +240,7 @@ Designed and built, end to end, a fully **offline AI-powered semantic search eng
 <div align="center">
 
 <a href="https://github.com/bartuonder">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=bartuonder&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f0c29&title_color=24c6dc&icon_color=24c6dc&include_all_commits=true&count_private=true" alt="GitHub stats"/>
+  <img height="170" src="https://streak-stats.demolab.com?user=bartuonder&theme=tokyonight&hide_border=true&background=0f0c29&ring=24c6dc&fire=24c6dc&currStreakLabel=24c6dc" alt="Contribution streak"/>
   <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=bartuonder&layout=compact&theme=tokyonight&hide_border=true&bg_color=0f0c29&title_color=24c6dc&langs_count=7" alt="Top languages"/>
 </a>
 
