@@ -4,7 +4,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&height=240&color=0:0f0c29,50:302b63,100:24c6dc&text=Bartu%20%C3%96nder&fontColor=ffffff&fontSize=64&fontAlignY=36&desc=AI%20Researcher%20in%20the%20making%20%C2%B7%20AI%2FML%20Engineer%20by%20craft&descSize=20&descAlignY=58&animation=fadeIn" alt="Bartu Önder banner" width="100%"/>
 
 <a href="https://github.com/bartuonder">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=24C6DC&center=true&vCenter=true&width=760&lines=%F0%9F%A7%A0+Deep+Learning+%C2%B7+PyTorch+%C2%B7+Transformers;%F0%9F%93%84+Implementing+papers+from+scratch;%F0%9F%A4%96+RAG+%C2%B7+Agentic+AI+%C2%B7+LangGraph;%E2%9A%99%EF%B8%8F+Training+%E2%86%92+Serving+%E2%86%92+Monitoring+(MLOps);%F0%9F%8E%93+Aiming+for+a+PhD+in+AI+in+the+USA" alt="Typing animation"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=24C6DC&center=true&vCenter=true&width=760&lines=%F0%9F%A7%A0+Deep+Learning+%C2%B7+PyTorch+%C2%B7+Transformers;%F0%9F%93%84+Implementing+papers+from+scratch;%F0%9F%A4%96+RAG+%C2%B7+Agentic+AI+%C2%B7+LangGraph;%F0%9F%94%AC+Agents+that+test+ML+claims+with+statistics;%E2%9A%99%EF%B8%8F+Training+%E2%86%92+Serving+%E2%86%92+Monitoring+(MLOps);%F0%9F%8E%93+Aiming+for+a+PhD+in+AI+in+the+USA" alt="Typing animation"/>
 </a>
 
 <br/>
@@ -49,6 +49,59 @@ class BartuOnder:
 
 ---
 
+## ⭐ Flagship Project: [AxiomForge](https://github.com/bartuonder/AxiomForge)
+
+> **Replicate machine-learning claims with statistics, not with a language model.** 🔬
+
+An autonomous **AI research agent** that reads a claim (or an arXiv link), tests it on many real datasets inside a sandbox, and lets **Python, not the LLM, decide the verdict**. The research agent then proposes its own follow-up hypotheses and tests them on datasets it has never seen.
+
+<div align="center">
+  <a href="https://github.com/bartuonder/AxiomForge">
+    <img src="https://raw.githubusercontent.com/bartuonder/AxiomForge/main/docs/media/axiomforge-demo.gif" alt="AxiomForge demo: summary, evidence ledger, research agent session and live progress" width="760"/>
+  </a>
+  <br/>
+  <sub>70-second walkthrough recorded from the real console.</sub>
+</div>
+
+<br/>
+
+**💡 The idea:** LLM agents write fluent conclusions but are unreliable judges of evidence. AxiomForge splits the work: the model plans experiments and writes prose, while a deterministic statistics layer computes every verdict and ties every number to an **evidence ledger**.
+
+| 🧪 Question | 📊 Measured result |
+|---|---|
+| Does it get known claims right? | **10 / 10** established comparisons judged as expected, on 9 real datasets |
+| Does it invent differences? | Decisive verdict in only **2.1 %** of simulated worlds with no true effect; **0 / 45** real-model comparisons significant when the only difference was the random seed |
+| Does the research agent inflate discoveries? | Family-wise error **3 %**, versus **24 %** for an agent that selects and tests on the same data and 89 % for uncorrected testing |
+| A real research session | 6 models × 16 datasets: **16 hypotheses registered → 15 confirmed, 0 reversed, 1 not confirmed**. The "winner's curse" overestimated the lead of tree ensembles ~3× on the exploration data, so only confirmation datasets are reported |
+
+**🔑 What makes it interesting**
+
+- 🔒 **Sealed confirmation data:** the hypothesis generator never sees the confirmation datasets. Hypotheses are frozen with a **SHA-256 digest** *before* testing, and `python -m app.research verify` detects tampering.
+- 📐 **Real statistics:** Wilcoxon signed-rank, Friedman, Holm and Benjamini-Hochberg corrections, with the dataset (not the split) as the unit of replication.
+- 🚧 **LLM output is policed:** the paper text is composed from ledger values and checked by **17 deterministic rules** that reject overclaims.
+- 📏 **Honest limits:** conservative, low power under 1 ROC-AUC point, and the real session *reproduces* a known finding (Grinsztajn et al., NeurIPS 2022) rather than claiming a new one.
+
+<p>
+  <img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square"/>
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Celery-37814A?style=flat-square&logo=celery&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-pgvector-4169E1?style=flat-square&logo=postgresql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/E2B_Sandbox-FF8800?style=flat-square"/>
+  <img src="https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white"/>
+</p>
+
+<p>
+  <a href="https://github.com/bartuonder/AxiomForge"><img src="https://img.shields.io/badge/⭐_Repository-24c6dc?style=for-the-badge" alt="Repository"/></a>
+  <a href="https://github.com/bartuonder/AxiomForge/blob/main/TECHNICAL_REPORT.md"><img src="https://img.shields.io/badge/📄_Technical_Report-302b63?style=for-the-badge" alt="Technical report"/></a>
+  <a href="https://github.com/bartuonder/AxiomForge/blob/main/demo/README.md"><img src="https://img.shields.io/badge/▶️_Try_the_demo_(no_API_key)-0f0c29?style=for-the-badge" alt="Demo"/></a>
+</p>
+
+---
+
 ## 🧭 What I work on
 
 > Click a section to expand 👇
@@ -68,6 +121,9 @@ Reading papers, deriving things by hand, and re-implementing architectures from 
   <img src="https://img.shields.io/badge/Probability_%26_Statistics-17A589?style=flat-square"/>
   <img src="https://img.shields.io/badge/Paper_Implementation-F1C40F?style=flat-square&labelColor=555"/>
   <img src="https://img.shields.io/badge/Language_Modeling-C0392B?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Hypothesis_Testing-1ABC9C?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Multiple_Testing_Correction-8E44AD?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Reproducibility-34495E?style=flat-square"/>
 </p>
 
 See [🧪 Research &amp; From-Scratch Implementations](#-research--from-scratch-implementations) below.
@@ -84,8 +140,9 @@ See [🧪 Research &amp; From-Scratch Implementations](#-research--from-scratch-
 | **NLP & LLMs** | Hugging Face Transformers, fine-tuning, semantic search & embeddings, structured outputs |
 | **Computer Vision** | OpenCV, image classification, object detection (YOLO), face recognition & emotion analysis |
 | **GenAI / RAG** | RAG pipelines, vector databases (Chroma, Qdrant), chunking & retrieval evaluation (Hit@k, MRR) |
-| **Agentic AI** | Tool calling, ReAct loops, planning, memory, reflection, **LangChain / LangGraph** |
-| **Data science** | NumPy, Pandas, Matplotlib, Seaborn, scikit-learn-style ML |
+| **Agentic AI** | Tool calling, ReAct loops, planning, memory, reflection, **LangChain / LangGraph** (human-in-the-loop interrupts, checkpoints), autonomous research agents, LLM output guardrails |
+| **Evaluation & statistics** | Wilcoxon, Friedman, Holm / Benjamini-Hochberg corrections, false-positive calibration, power simulations, experiment reproducibility |
+| **Data science** | NumPy, SciPy, Pandas, Matplotlib, Seaborn, scikit-learn, XGBoost / LightGBM / CatBoost |
 
 <p>
   <img src="https://skillicons.dev/icons?i=python,pytorch,opencv,numpy,pandas,sklearn&perline=6" alt="AI stack"/>
@@ -103,6 +160,8 @@ Models that only live in notebooks don't count. I train → track → containeri
 - 🐳 **Containers:** Docker, Docker Compose
 - ☁️ **Cloud:** AWS
 - ⚡ **Inference:** async inference queues (Celery + RabbitMQ), ONNX Runtime, Redis caching
+- 🧰 **Sandboxed execution:** running agent-generated experiment code in isolated sandboxes (E2B)
+- ✅ **CI & quality:** GitHub Actions, Pytest, mutation checks, Playwright browser tests
 - 🗄️ **Model & artifact hosting:** Hugging Face Hub
 
 <p>
@@ -122,7 +181,7 @@ Production-minded backends that wrap AI models in clean, tested, scalable servic
 |---|---|
 | **API** | FastAPI, Starlette, Pydantic |
 | **Async & queues** | Celery, RabbitMQ, Redis |
-| **Data** | PostgreSQL, SQLite, SQLAlchemy, Alembic, Redis, Vector DBs |
+| **Data** | PostgreSQL (+ pgvector), SQLite, SQLAlchemy, Alembic, Redis, Vector DBs |
 | **Frontend** | Next.js, Tailwind CSS (dashboards for my SaaS products) |
 | **Quality** | Pytest, Clean Architecture, Dependency Injection |
 
